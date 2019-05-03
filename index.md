@@ -114,35 +114,78 @@ for (int i = 0; i < E; i++) {
 }
 ```
 
-### Least Common Ancestor
-(with segtree/sparse table for O(log n)/O(1) shortest path calculation)
+### Maximum Bipartite Matching in O(VE)
+
+Ford-Fulkerson algorithm (Max flow) used for O(VE) max bipartite matching
+
 ```cpp
-// Precalc
-void dfs(int node, int depth, int par) {
-    euler_tour[p++] = node;
-    if (been_to[node]) return;
-    been_to[node] = 1;
-    depths[node] = depth;
-    first_occurrence[node] = p - 1;
-    for (int i = 0; i < graph[node].size(); i++) {
-        if (tree[node][i].first != par) {
-            dfs(tree[node][i].first, depth + tree[node][i].second, node);
+// Graph stores edge ids for directed edges
+// Each directed edge e u -> v has to[e] = v and act[e] = 1 if 1 in residual graph
+// A+B+1 is the sink node
+int dfs(int x, vector<int> &path) {
+	if (x == A+B+1) return 1;
+	for (int i = 0; i < graph[x].size(); i++) if (act[graph[x][i]] && !seen[to[graph[x][i]]]) {
+		seen[to[graph[x][i]]] = 1; // ?
+		if (dfs(to[graph[x][i]], path)) {
+			path.push_back(graph[x][i]);
+			return 1;
+		}
+	}
+	return 0;
+}
+
+int max_flow(int s, int t) {
+	int ans = 0;
+	while (1) {
+		vector<int> path;
+		memset(seen, 0, sizeof(seen));
+		int r = dfs(s, path);
+		if (!r) break;
+		for (int i = 0; i < path.size(); i++) {
+			act[path[i]] ^= 1;
+			act[path[i]^1] ^= 1;
+		}
+		ans++;
+	}
+	return ans;
+}
+```
+
+### Least Common Ancestor
+
+Jump pointers for O(log n) online
+
+```cpp
+void dfs(int x, int par) {
+	tin[x] = c++;
+	jp[x][0] = par;
+	for (int i = 0; i < graph[x].size(); i++) 
+        if (graph[x][i].S != par) {
+            dfs(graph[x][i].S, x);
         }
+	tout[x] = c++;
+}
+
+// Precalc
+dfs(1, 1);
+for (int i = 1; i < 17; i++) {
+    for (int j = 1; j <= N; j++) {
+        jp[j][i] = jp[jp[j][i-1]][i-1];
     }
 }
 
-// Base case
-dfs(root, 0, -1);
+int isanc(int u, int v) {
+	return tin[u] <= tin[v] && tout[u] >= tout[v];
+}
 
-// Make segment tree/sparse table
-
-// LCA
-int lca(int node1, int node2) {
-    int n1 = first_occurrence[node1];
-    int n2 = first_occurrence[node2];
-    int rmq = seg_min(0, TREE_BOUND, min(n1, n2), max(n1, n2), 0);
-    int dist = depths[node1] + deths[node2] - 2*rmq;
-    return dist;
+int lca(int a, int b) {
+	int res = -2069696969;
+	if (isanc(a, b)) return a;
+	if (isanc(b, a)) return b;
+	for (int i = 16; i >= 0; i--) {
+		if (!isanc(jp[a][i], b)) a = jp[a][i];
+	}
+	return jp[a][0];
 }
 ```
 
@@ -212,6 +255,24 @@ for (int i = 0; i < E; i++) {
     }
 }
 ```
+
+#### Floyd-Warshall Algorithm
+
+O(V^3) all pairs shortest paths
+
+```cpp
+// Init distance matrix
+memset(dists, 0x3f, sizeof(dists));
+for (int i = 0; i < V; i++) dists[i][i] = 0;
+for (int i = 0; i < E; i++) dists[a[i]][b[i]] = dists[b[i]][a[i]] = w[i];
+
+for (int mid = 0; mid < V; mid++)
+    for (int u = 0; u < V; u++)
+        for (int v = 0; v < V; v++) 
+            dists[u][v] = min(dists[u][v], dists[u][mid] + dists[mid][v]);
+```
+
+
 
 ## Ranges and Trees
 
@@ -390,7 +451,7 @@ void rset(int lo, int hi, int left, int right, int ind, int val) {
 ```cpp
 void cons() { for (int i = N-1; i > 0; i--) st[i] = max(st[i<<1], st[i<<1|1]); }
 void seg_set(int i, int v) { for (st[i += N] = v; i > 1; i >>= 1) st[i>>1] = max(st[i], st[i^1]); }
-int seg_max(int l, int r) {
+int seg_min(int l, int r) {
     int res = -INF;
     for (l += N, r += N; l < r; l >>= 1, r >>= 1) {
         if (l&1) res = max(res, st[l++]);
