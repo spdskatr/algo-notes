@@ -390,7 +390,7 @@ void rset(int lo, int hi, int left, int right, int ind, int val) {
 ```cpp
 void cons() { for (int i = N-1; i > 0; i--) st[i] = max(st[i<<1], st[i<<1|1]); }
 void seg_set(int i, int v) { for (st[i += N] = v; i > 1; i >>= 1) st[i>>1] = max(st[i], st[i^1]); }
-int seg_min(int l, int r) {
+int seg_max(int l, int r) {
     int res = -INF;
     for (l += N, r += N; l < r; l >>= 1, r >>= 1) {
         if (l&1) res = max(res, st[l++]);
