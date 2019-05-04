@@ -54,14 +54,14 @@ void dfs(int x, int par) {
 vector<int> graph[MAX_V], S, top_sort;
 int deps[MAX_V];
 for (int i = 1; i <= V; i++) {
-	for (int j = 0; j < graph[i].size(); j++) {
-		deps[graph[i][j]]++;
+    for (int j = 0; j < graph[i].size(); j++) {
+        deps[graph[i][j]]++;
     }
 }
 for (int i = 1; i <= V: i++) if (deps[i] == 0) S.push_back(i);
 while (!S.empty()) {
     int u = s.back(); s.pop_back();
-  	top_sort.push_back(u);
+      top_sort.push_back(u);
     for (int i = 0; i < graph[u].size(); i++) {
         if (--deps[graph[u][i]] == 0) S.push_back(graph[u][i]);
     }
@@ -76,7 +76,7 @@ vector<int> graph[MAX_V], top_sort;
 int state[MAX_V];
 
 void dfs(int x) {
-	if (state[x] == 2) return;
+    if (state[x] == 2) return;
     if (state[x] == 1) assert(false && "Graph contains cycle");
     state[x] = 1;
     for (int i = 0; i < graph[x].size(); i++) dfs(graph[x][i]);
@@ -123,31 +123,31 @@ Ford-Fulkerson algorithm (Max flow) used for O(VE) max bipartite matching
 // Each directed edge e u -> v has to[e] = v and act[e] = 1 if 1 in residual graph
 // A+B+1 is the sink node
 int dfs(int x, vector<int> &path) {
-	if (x == A+B+1) return 1;
-	for (int i = 0; i < graph[x].size(); i++) if (act[graph[x][i]] && !seen[to[graph[x][i]]]) {
-		seen[to[graph[x][i]]] = 1; // ?
-		if (dfs(to[graph[x][i]], path)) {
-			path.push_back(graph[x][i]);
-			return 1;
-		}
-	}
-	return 0;
+    if (x == A+B+1) return 1;
+    for (int i = 0; i < graph[x].size(); i++) if (act[graph[x][i]] && !seen[to[graph[x][i]]]) {
+        seen[to[graph[x][i]]] = 1; // ?
+        if (dfs(to[graph[x][i]], path)) {
+            path.push_back(graph[x][i]);
+            return 1;
+        }
+    }
+    return 0;
 }
 
 int max_flow(int s, int t) {
-	int ans = 0;
-	while (1) {
-		vector<int> path;
-		memset(seen, 0, sizeof(seen));
-		int r = dfs(s, path);
-		if (!r) break;
-		for (int i = 0; i < path.size(); i++) {
-			act[path[i]] ^= 1;
-			act[path[i]^1] ^= 1;
-		}
-		ans++;
-	}
-	return ans;
+    int ans = 0;
+    while (1) {
+        vector<int> path;
+        memset(seen, 0, sizeof(seen));
+        int r = dfs(s, path);
+        if (!r) break;
+        for (int i = 0; i < path.size(); i++) {
+            act[path[i]] ^= 1;
+            act[path[i]^1] ^= 1;
+        }
+        ans++;
+    }
+    return ans;
 }
 ```
 
@@ -157,13 +157,13 @@ Jump pointers for O(log n) online
 
 ```cpp
 void dfs(int x, int par) {
-	tin[x] = c++;
-	jp[x][0] = par;
-	for (int i = 0; i < graph[x].size(); i++) 
+    tin[x] = c++;
+    jp[x][0] = par;
+    for (int i = 0; i < graph[x].size(); i++) 
         if (graph[x][i].S != par) {
             dfs(graph[x][i].S, x);
         }
-	tout[x] = c++;
+    tout[x] = c++;
 }
 
 // Precalc
@@ -175,17 +175,17 @@ for (int i = 1; i < 17; i++) {
 }
 
 int isanc(int u, int v) {
-	return tin[u] <= tin[v] && tout[u] >= tout[v];
+    return tin[u] <= tin[v] && tout[u] >= tout[v];
 }
 
 int lca(int a, int b) {
-	int res = -2069696969;
-	if (isanc(a, b)) return a;
-	if (isanc(b, a)) return b;
-	for (int i = 16; i >= 0; i--) {
-		if (!isanc(jp[a][i], b)) a = jp[a][i];
-	}
-	return jp[a][0];
+    int res = -2069696969;
+    if (isanc(a, b)) return a;
+    if (isanc(b, a)) return b;
+    for (int i = 16; i >= 0; i--) {
+        if (!isanc(jp[a][i], b)) a = jp[a][i];
+    }
+    return jp[a][0];
 }
 ```
 
@@ -470,7 +470,7 @@ Functions can be used in sparse tables if they are *associative* (see segment tr
 ```cpp
 int sparse_table[100005][20];
 for (int i = 1; i <= N; i++) {
-	sparse_table[i][0] = arr[i];
+    sparse_table[i][0] = arr[i];
 }
 for (int e = 1; e < 20; e++) {
     for (int i = 1; i <= N + 1 - (1 << (e-1)); i++) {
