@@ -340,9 +340,61 @@ void finc(int i, int x) {
 
 In C++, SBBSTs are implemented as `std::set` and `std::map`.  They can be used for a bunch of different things, some of which speed up implementation a lot
 
-#### Priority Queues
+#### Actually implementing a SBBST, featuring Treap
 
-This one is less important since the STL has priority queues as well, bit it's worth noting that SBBSTs have the same insert and delete-min time complexities as binary heaps.
+The primary method for balancing BSTs is to use a technique called rotation. Rotating a binary search tree essentially changes the root of the tree to any node you want. There are 2 types of rotation operations:
+
+```python
+# Pseudocode for left rotate - makes right child the new root
+def left_rotate(root):
+    new_right = root->right->left
+    old_right = root->right
+    root->right = new_right
+    old_right->left = root
+    root.update_invariant()
+    old_right.update_invariant()
+    return old_right
+   
+# Pseudocode for right rotate - makes left child the new root
+def right_rotate(root):
+    new_left = root->left->right
+    old_left = root->left
+    root->left = new_left
+    old_left->right = root
+    root.update_invariant()
+    old_left.update_invariant()
+    return old_left
+```
+
+A Treap with random values as the keys can also be called a randomised binary search tree and runs in **expected O(log n)**. The idea is to maintain a BST with respect to the keys and a heap with respect to the values. Treaps rely on 2 utility functions, merge and split.
+
+```python
+# Pseudocode for merge operation on 2 subtreaps
+def merge(root1, root2):
+    if root1 does not exist: return root2
+    if root2 does not exist: return root1
+    if root1.value > root2.value:
+        root1->right = merge(root1->right, root2)
+        root1.update_invariant()
+        return root1
+    else:
+        root2->left = merge(root1, root2->left)
+        root2.update_invariant()
+        return root2
+
+# Pseudocode for split at point x operation for 2 subtreaps
+def split(root, x, &l, &r):
+    if root does not exist: l = r = null
+    if x < root.key:
+        split(root->left, key, l, root->left)
+        r = root
+    else:
+        split(root->right, key, root->right, r)
+        l = root
+    root.update_invariant()
+```
+
+
 
 #### _\_gnu\_pbds::tree
 
