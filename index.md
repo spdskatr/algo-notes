@@ -366,7 +366,7 @@ def right_rotate(root):
     return old_left
 ```
 
-A Treap with random values as the values can also be called a randomised binary search tree and runs in **expected O(log n)**. The idea is to maintain a BST with respect to the keys and a heap with respect to the values. Treaps rely on 2 utility functions, merge and split.
+A Treap with random numbers as the values can also be called a randomised binary search tree and runs in **expected O(log n)**. The idea is to maintain a BST with respect to the keys and a heap with respect to the values. Treaps rely on 2 utility functions, merge and split.
 
 ```python
 # Pseudocode for merge operation on 2 subtreaps
