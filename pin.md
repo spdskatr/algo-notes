@@ -31,7 +31,7 @@ PNIINPPINN
 The first and only line of output should contain a single integer, the number of times Pin appears in the poem, modulo 1000000007.
 
 ```
-proposes12
+12
 ```
 
 ## Part 2
