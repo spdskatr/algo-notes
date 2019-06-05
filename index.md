@@ -229,7 +229,7 @@ O(VE)
 
 ```cpp
 pair<int, pair<int, int> > EDGE_STRUCT;
-EDGE_STRUCT edges[MAX_E];
+EDGE_STRUST edges[MAX_E];
 // Algorithm
 for (int i = 1; i <= V; i++) dists[i] = INF;
 dists[source] = 0;
@@ -366,7 +366,7 @@ def right_rotate(root):
     return old_left
 ```
 
-A Treap with random numbers as the values can also be called a randomised binary search tree and runs in **expected O(log n)**. The idea is to maintain a BST with respect to the keys and a heap with respect to the values. Treaps rely on 2 utility functions, merge and split.
+A Treap with random values as the keys can also be called a randomised binary search tree and runs in **expected O(log n)**. The idea is to maintain a BST with respect to the keys and a heap with respect to the values. Treaps rely on 2 utility functions, merge and split.
 
 ```python
 # Pseudocode for merge operation on 2 subtreaps
@@ -386,10 +386,10 @@ def merge(root1, root2):
 def split(root, x, &l, &r):
     if root does not exist: l = r = null
     if x < root.key:
-        split(root->left, key, l, root->left)
+        split(root->left, x, l, root->left)
         r = root
     else:
-        split(root->right, key, root->right, r)
+        split(root->right, x, root->right, r)
         l = root
     root.update_invariant()
 ```
