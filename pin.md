@@ -84,7 +84,7 @@ void encode(const string &msg, string &poem);
 void decode(const string &poem, string &msg);
 ```
 
-The function `encode` should read in the message `msg` as a parameter and output a valid poem where Pin appears exactly K times. The function `decode` should read in the message `msg` as a parameter and output the original message. No global variables can be shared between the two functions - two different instances of your program will be run to encode and decode messages. Both functions will be called at most 100 times per test case.
+The function `encode` should read in the message `msg` as a parameter and output a valid poem where Pin appears exactly K times. The function `decode` should read in the message `msg` as a parameter and output the original message. No global variables can be shared between the two functions - two different instances of your program will be run to encode and decode messages. Both functions will be called at most 10 times per test case.
 
 ### Subtasks + Constraints
 
