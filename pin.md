@@ -3,9 +3,9 @@
 *Note: These problems don't have modules or test cases, they are purely here for mental solving. Have fun!*
 
 ## Part 1
-
-Time: 1 second
-Memory: 256MB
+| Time | Memory |
+| --- | --- |
+| 1 second | 256MB |
 
 After last time surviving being booted 400 metres into the air and landing on his face, Woody has once again fallen hopelessly in love with Pin. This time, he wants to impress Pin by writing her a love poem consisting only of the letters P, I and N. The poem `p` will be `N` characters in length, and doesn’t have any spaces or line breaks. As he wants to collect statistics for his poem, he asks you to calculate the number of times Pin appears in the poem, that is, the number of times a letter P appears before a letter I which appears before a letter N. In other words, calculate the total number (modulo 1000000007) of `(i, j, k)` where `i < j < k` and `p[i] == ‘P’`, `p[j] == ‘I’` and `p[k] == ‘N’`.
 
@@ -36,8 +36,9 @@ proposes12
 
 ## Part 2
 
-Time: 1 second
-Memory: 1 GB
+| Time | Memory |
+| --- | --- |
+| 1 second | 1GB |
 
 Woody has heard from Tennis Ball that Pin has a favourite number `K`. However, neither Tennis Ball nor Woody knows what her favourite number actually is. Woody is planning on asking Pin's best friend Coiny in the evening. To prepare, he wants you to write a program that outputs the shortest length poem where Pin appears in the poem exactly `K` times.
 
@@ -69,8 +70,9 @@ PPIPININ
 
 ## Part 3
 
-Time: 3 seconds
-Memory: 1 GB
+| Time | Memory |
+| --- | --- |
+| 3 seconds | 1GB |
 
 **TWO-STEP TASK**
 
