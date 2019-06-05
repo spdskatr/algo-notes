@@ -8,7 +8,7 @@
 | --- | --- |
 | 1 second | 256MB |
 
-After last time surviving being booted 400 metres into the air and landing on his face, Woody has once again fallen hopelessly in love with Pin. This time, he wants to impress Pin by writing her a love poem consisting only of the letters P, I and N. The poem `p` will be `N` characters in length, and doesn’t have any spaces or line breaks. As he wants to collect statistics for his poem, he asks you to calculate the number of times Pin appears in the poem, that is, the number of times a letter P appears before a letter I which appears before a letter N. In other words, calculate the total number (modulo 1000000007) of `(i, j, k)` where `i < j < k` and `p[i] == ‘P’`, `p[j] == ‘I’` and `p[k] == ‘N’`.
+After last time surviving being booted 400 metres into the air and landing on his face, Woody has once again fallen hopelessly in love with Pin. This time, he wants to impress Pin by writing her a love poem consisting only of the letters P, I and N. The poem `p` will be `N` characters in length, and will not have any spaces or line breaks. As he wants to collect statistics for his poem, he asks you to calculate the number of times Pin appears in the poem, that is, the number of times a letter P appears before a letter I which appears before a letter N. In other words, calculate the total number (modulo 1000000007) of `(i, j, k)` where `i < j < k` and `p[i] == ‘P’`, `p[j] == ‘I’` and `p[k] == ‘N’`.
 
 ### Subtasks + Constraints
 
@@ -85,7 +85,7 @@ void encode(const string &msg, string &poem);
 void decode(const string &poem, string &msg);
 ```
 
-The function `encode` should read in the message `msg` as a parameter and output a valid poem where Pin appears exactly K times. The function `decode` should read in the message `msg` as a parameter and output the original message. No global variables can be shared between the two functions - two different instances of your program will be run to encode and decode messages. Both functions will be called at most 10 times per test case.
+The function `encode` should read in the message `msg` as a parameter and output a valid poem where Pin appears exactly N times. The function `decode` should read in the message `msg` as a parameter and output the original message. No global variables can be shared between the two functions - two different instances of your program will be run to encode and decode messages. Both functions will be called at most 10 times per test case.
 
 ### Subtasks + Constraints
 
