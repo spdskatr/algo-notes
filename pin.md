@@ -3,6 +3,7 @@
 *Note: These problems don't have modules or test cases, they are purely here for mental solving. Have fun!*
 
 ## Part 1
+
 | Time | Memory |
 | --- | --- |
 | 1 second | 256MB |
