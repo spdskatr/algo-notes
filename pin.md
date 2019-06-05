@@ -90,6 +90,7 @@ The function `encode` should read in the message `msg` as a parameter and output
 ### Subtasks + Constraints
 
 For all test cases, `N <= 1000`
+The message will be a string of arbitrary ASCII characters.
 
 ### Scoring
 
