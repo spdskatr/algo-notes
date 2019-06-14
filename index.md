@@ -1,6 +1,6 @@
 # Algorithms Notes (The Appendix)
 
-Subsections are in alphabetical order. Obviously a hash table data structure would be the best way to go, but `std::unordered_map` doesn't even work on orac lmao
+Subsections are in no particular order. Obviously a hash table data structure would be the best way to go, but `std::unordered_map` doesn't even work on orac lmao
 
 ## General
 
@@ -16,6 +16,21 @@ while (lo + 1 < hi) {
     else hi = mid;
 }
 // Answer is stored in lo
+```
+
+## Euclidean Algorithm
+
+Standard vanilla Euclidean algorithm.
+
+```cpp
+int gcd(int x, int y) {
+	while (y != 0) {
+		int temp = y;
+		y = x%temp;
+		x = temp;
+	}
+	return x;
+}
 ```
 
 ## Graph Theory
