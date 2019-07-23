@@ -244,7 +244,7 @@ O(VE)
 
 ```cpp
 pair<int, pair<int, int> > EDGE_STRUCT;
-EDGE_STRUST edges[MAX_E];
+EDGE_STRUCT edges[MAX_E];
 // Algorithm
 for (int i = 1; i <= V; i++) dists[i] = INF;
 dists[source] = 0;
