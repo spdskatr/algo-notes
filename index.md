@@ -63,7 +63,7 @@ void dfs(int x, int par) {
 
 #### Topological Sort
 
-##### Kahn's algorithm
+##### Kahn's algorithm (a.k.a. Junkbot's algorithm) 
 
 ```cpp
 vector<int> graph[MAX_V], S, top_sort;
