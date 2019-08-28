@@ -13,5 +13,5 @@ Oops, the latex is a bit broken. Oh well, deal with it.
 - [City](city/statement)
 - [Watering](watering/statement)
 - [Potion](potion/statement)
-- [Creeper, Aw Man](creeper/statement)
+- [Creeper, Aww Man](creeper/statement)
 - [Mind Games](mind/statement)
