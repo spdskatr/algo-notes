@@ -1,4 +1,4 @@
-# AIO: Unofficial editorial
+# AIO 2019: Unofficial editorial
 
 ## Intro
 
@@ -18,9 +18,9 @@ The observation to make is that to fill up K master jobs, you always want to hir
 
 Sort the monks' skill levels, as well as the professions' skill requirements, then start from the ends of the sorted array to fill up as many master jobs as possible, and then fill up as many student jobs as possible with the remainder. If you manage to fill up all the jobs, then you have the maximum possible.
 
-## Q4: Medusa's snakes
+## Q4: Medusa's Snakes
 
-Given a venom level x, it is easy to determine if it is possible to take letters of a given snake's DNA and create a snake with that venom level. Simply take x S letters, followed by x N letters, and so on. In fact this is always produces an optimal solution in O(N) time.
+Given a venom level x, it is easy to determine if it is possible to take letters of a given snake's DNA and create a snake with that venom level. Simply take x S letters, followed by x N letters, and so on. In fact this always produces an optimal solution in O(N) time.
 
 We could simply use this function to check for every possible value of x, and take the maximum in O(N^2) time. However, we can narrow down on the maximum venom level, in an even faster way, by binary searching the answer. This kind of binary search is very special and more generalised than the kind of binary search often first explained in computer science (I will describe it briefly here).
 
@@ -33,6 +33,8 @@ In conclusion, the algorithm is O(N log N).
 ## Q5: Evading Capture
 
 This is a graph theory problem. I won't talk about the implementation details in representing graphs, or the details of the various standard graph algorithms.
+
+[[PDF for introduction to graph theory]](http://orac.amt.edu.au/notes/GraphTheory1-Dec2013.pdf)
 
 The observation for this problem is that you can get from a city A to a city B in K hops if and only if the shortest path from A to B with the same *parity* as x is less than or equal to K. By parity, I mean that if two numbers are both odd or both even, they have the same parity. This is easy to prove, because you can get to a location, and stay there by repeatedly going to an adjacent city and back.
 

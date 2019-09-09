@@ -1,4 +1,4 @@
-# Problem Set: Binary Search
+# Problem Set: Binary Search (Museum)
 
 *Note: These problems don't have modules or test cases, they are purely here for mental solving. Have fun!*
 
@@ -48,3 +48,17 @@ You will receive 40% of the points if you answer the maximum sum of technology l
 
 ## Part 3
 
+| Time     | Memory |
+| -------- | ------ |
+| 1 second | 256MB  |
+
+After a long and boring ride down the elevator, Tennis Ball has arrived back at ground floor with all of his scavenged artifacts. He collected N artifacts in total, numbered 1 to N, and has grouped them into M different groups, numbered 1 to M. 
+
+To show off his archaeological discoveries, he is going to C conferences numbered from 1 to C, and for each conference he has decided on K groups of items that he wants to take with him to the conference. g_ik is the number of the k-th group of artifacts he is taking to conference i.
+
+For each conference, he wants to know the median technology level of the artifacts that he is presenting at the conference.
+
+## Subtasks and Constraints
+
+1 <= N, M, C <= 100000
+1 <= K <= 20
