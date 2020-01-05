@@ -1,6 +1,6 @@
 # NCSS 2020 Sydney MurderWatch
 
-*Updated as of 2020-01-05 22:24:29*
+*Updated as of 2020-01-05 22:25:49*
 
 ## List
 1: Kira Prado
