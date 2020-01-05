@@ -1,23 +1,23 @@
 # NCSS 2020 Sydney MurderWatch
 
-*Updated as of 2020-01-05 22:25:49*
+*Updated as of 2020-01-05 22:26:47*
 
 ## List
-1: Kira Prado
-2: Zebb McAteer
-3: Jacky Guan
-4: Salina Huang
-5: Sofia De Bellis
-6: Dillon De Silva
-7: Julian Alcorn
-8: Stefanie Bruder
-9: Annie Liu
-10: Alex Hughes
-11: Flynn Bryant
-12: Josh Ramos
-13: Caitlin Ahmad
-14: Téigan Penna
-15: Julia Nappa
+- Kira Prado
+- Zebb McAteer
+- Jacky Guan
+- Salina Huang
+- Sofia De Bellis
+- Dillon De Silva
+- Julian Alcorn
+- Stefanie Bruder
+- Annie Liu
+- Alex Hughes
+- Flynn Bryant
+- Josh Ramos
+- Caitlin Ahmad
+- Téigan Penna
+- Julia Nappa
 
 
 ## Instructions
