@@ -1,6 +1,6 @@
 # NCSS 2020 Sydney MurderWatch
 
-*Updated as of 2020-01-06 08:40:23*
+*Updated as of 2020-01-06 09:02:12*
 
 ## List
 - Kira Prado
@@ -13,7 +13,6 @@
 - Annie Liu
 - Alex Hughes
 - Flynn Bryant
-- Josh Ramos
 - Caitlin Ahmad
 - Téigan Penna
 - Julia Nappa
