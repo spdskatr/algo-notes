@@ -1,6 +1,6 @@
 # NCSS 2020 Sydney MurderWatch
 
-*Updated as of 2020-01-06 09:02:12*
+*Updated as of 2020-01-06 11:50:13*
 
 ## List
 - Kira Prado
@@ -9,7 +9,6 @@
 - Salina Huang
 - Sofia De Bellis
 - Dillon De Silva
-- Stefanie Bruder
 - Annie Liu
 - Alex Hughes
 - Flynn Bryant
