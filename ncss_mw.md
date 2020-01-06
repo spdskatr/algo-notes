@@ -1,14 +1,11 @@
 # NCSS 2020 Sydney MurderWatch
 
-*Updated as of 2020-01-06 13:36:29*
+*Updated as of 2020-01-06 15:58:46*
 
 ## List
 - Kira Prado
 - Zebb McAteer
-- Salina Huang
-- Sofia De Bellis
 - Dillon De Silva
-- Alex Hughes
 - Flynn Bryant
 - Caitlin Ahmad
 - Téigan Penna
