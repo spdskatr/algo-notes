@@ -1,10 +1,8 @@
 # NCSS 2020 Sydney MurderWatch
 
-*Updated as of 2020-01-06 23:00:09*
+*Updated as of 2020-01-07 15:26:24*
 
 ## List
-- Kira Prado
-- Zebb McAteer
 - Flynn Bryant
 - Caitlin Ahmad
 - Téigan Penna
